@@ -8,7 +8,7 @@ Route::middleware('api')->group(function () {
     // Rutas para departamentos
     Route::apiResource('departments', DepartmentController::class);
     
-    // Ruta adicional para obtener subdepartamentos
-    Route::get('departments/{id}/subdepartments', [DepartmentController::class, 'subdepartments']);
+    // Ruta adicional para obtener subdepartamentos (usando route model binding)
+    Route::get('departments/{department}/subdepartments', [DepartmentController::class, 'subdepartments']);
 });
 
